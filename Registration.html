@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Passport Seva Registration</title>
+  <link rel="stylesheet" href="Registration.css">
+</head>
+<body>
+
+
+     <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo-title">
+      <img src="images/favicon.png" alt="Logo" />
+      <h1>Passport Seva</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li class="dropdown">
+        <a href="#">Services ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Apply for Passport</a></li>
+          <li><a href="#">Track Application</a></li>
+          <li><a href="#">Check Appointment Availability</a></li>
+        </ul>
+      </li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html">Register</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+
+  <div class="container">
+    <!-- Left Panel (Form) -->
+    <div class="form-section">
+      <img src="images/favicon.png" alt="Passport Logo" class="logo" />
+      <h2>User Registration</h2>
+      <p class="label">Register to apply at <span class="required">*</span></p>
+        <p class="label">Please fill in the details below to create your account.</p>
+      <form>
+        <label>Full Name <span class="required">*</span></label>
+        <input type="text" placeholder="e.g. John Doe" required />
+
+        <label>Email ID <span class="required">*</span></label>
+        <input type="email" required />
+
+        <label>Do you want your Login Id to be same as E-mail Id? <span class="required">*</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="login-same" /> Yes</label>
+          <label><input type="radio" name="login-same" /> No</label>
+        </div>
+
+        <label>Login ID <span class="required">*</span></label>
+        <div class="login-check">
+          <input type="text" required />
+        </div>
+
+        <label>Password <span class="required">*</span></label>
+        <input type="password" required />
+
+        <div class="btn-row">
+          <button type="reset" class="btn-clear">Clear</button>
+          <button type="submit" class="btn-submit">Sign Up</button>
+        </div>
+
+        <p class="signin-link">Already have an Account? <a href="login.html">Sign In</a></p>
+        <p class="terms">By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+      </form>
+    </div>
+
+    <div class="info-panel">
+      <div class="info-text">
+        <h3>WELCOME TO PASSPORT SEVA</h3>
+        <p>Delivering passport services to citizens in a timely, accessible, reliable manner</p>
+      </div>
+    </div>
+  </div>
+
+ <!-- Footer -->
+  <footer>
+    <p>© Content Owned By Ministry Of External Affairs, Government Of India | Site Maintained By Tata Consultancy Services Ltd.</p>
+    <p>Visitors: 6,708,699 | Last updated on: 03/07/2025</p>
+    <p>Helpdesk: 1800-258-1800</p>
+  </footer>
+
+
+</body>
+</html>
