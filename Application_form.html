@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passport Application Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="form-container">
+    <!-- Header -->
+    <header>
+      <h1>Passport Seva Application Form</h1>
+      <p>Apply for Fresh or Re-issued Passport</p>
+    </header>
+
+    <!-- Progress Bar -->
+    <ul class="progress-bar">
+      <li class="active">Passport Type</li>
+      <li>Personal Details</li>
+      <li>Family Details</li>
+      <li>Address</li>
+      <li>Upload</li>
+    </ul>
+
+    <!-- Page 1: Passport Type -->
+    <div class="form-page" id="page1">
+      <h2>Passport Type</h2>
+      <label>Applying for*</label><br />
+      <input type="radio" name="applyFor" /> Fresh Passport
+      <input type="radio" name="applyFor" /> Re-issue of Passport
+
+      <br /><br />
+
+      <label>Type of Application*</label><br />
+      <input type="radio" name="applicationType" /> Normal
+      <input type="radio" name="applicationType" /> Tatkaal
+
+      <br /><br />
+
+      <label>Type of Passport Booklet*</label><br />
+      <input type="radio" name="bookletType" /> 36 Pages
+      <input type="radio" name="bookletType" /> 60 Pages
+
+      <div class="form-nav">
+        <button disabled>Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    </div>
+
+    <!-- Page 2: Personal Details -->
+    <div class="form-page" id="page2">
+      <h2>Personal Details</h2>
+      <input type="text" placeholder="First Name*" />
+      <input type="text" placeholder="Last Name*" />
+      <select>
+        <option>Gender*</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <select>
+        <option>Marital Status*</option>
+        <option>Single</option>
+        <option>Married</option>
+      </select>
+      <input type="text" placeholder="Place of Birth*" />
+      <input type="date" placeholder="Date of Birth*" />
+      <input type="tel" placeholder="Phone Number*" />
+      <input type="email" placeholder="Email*" />
+      <input type="text" placeholder="Occupation*" />
+      <input type="text" placeholder="Citizenship*" />
+      <label>Have you been issued a passport?</label>
+      <input type="radio" name="issued" /> Yes
+      <input type="radio" name="issued" /> No
+
+      <div class="form-nav">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    </div>
+
+    <!-- Page 3: Family Details -->
+    <div class="form-page" id="page3">
+      <h2>Family Details</h2>
+      <input type="text" placeholder="Father's First Name*" />
+      <input type="text" placeholder="Father's Last Name*" />
+      <input type="text" placeholder="Mother's First Name*" />
+      <input type="text" placeholder="Mother's Last Name*" />
+      <input type="text" placeholder="Guardian's Name" />
+      <input type="text" placeholder="Spouse's First Name" />
+      <input type="text" placeholder="Spouse's Last Name" />
+
+      <div class="form-nav">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    </div>
+
+    <!-- Page 4: Address Details -->
+    <div class="form-page" id="page4">
+      <h2>Applicant Address Details</h2>
+      <input type="text" placeholder="House No." />
+      <input type="text" placeholder="Village" />
+      <input type="text" placeholder="Town/City" />
+      <input type="text" placeholder="District" />
+      <input type="text" placeholder="State" />
+      <input type="text" placeholder="PIN Code" />
+      <input type="text" placeholder="Country" />
+      <input type="tel" placeholder="Phone No." />
+
+      <div class="form-nav">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+      </div>
+    </div>
+
+    <!-- Page 5: Upload Documents -->
+    <div class="form-page" id="page5">
+      <h2>Upload Documents</h2>
+      <label>Upload Passport Size Photo:</label>
+      <input type="file" />
+      <label>Upload Aadhaar Card:</label>
+      <input type="file" />
+      <input type="text" placeholder="Aadhaar Number*" />
+      <label>Upload Signature:</label>
+      <input type="file" />
+
+      <div class="form-nav">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="submitForm()">Save & Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+
+    function nextPage() {
+      const pages = document.querySelectorAll('.form-page');
+      if (currentPage < pages.length) {
+        pages[currentPage - 1].style.display = 'none';
+        currentPage++;
+        pages[currentPage - 1].style.display = 'block';
+        updateProgress();
+      }
+    }
+
+    function prevPage() {
+      const pages = document.querySelectorAll('.form-page');
+      if (currentPage > 1) {
+        pages[currentPage - 1].style.display = 'none';
+        currentPage--;
+        pages[currentPage - 1].style.display = 'block';
+        updateProgress();
+      }
+    }
+
+    function updateProgress() {
+      const steps = document.querySelectorAll('.progress-bar li');
+      steps.forEach((step, index) => {
+        step.classList.toggle('active', index < currentPage);
+      });
+    }
+
+    function submitForm() {
+      alert("Your application has been submitted successfully!");
+      window.location.href = "home.html";
+    }
+
+    // Initial state
+    document.querySelectorAll('.form-page').forEach((page, index) => {
+      page.style.display = index === 0 ? 'block' : 'none';
+    });
+  </script>
+
+    <!-- Footer -->
+  <footer>
+    <p>© Content Owned By Ministry Of External Affairs, Government Of India | Site Maintained By Tata Consultancy Services Ltd.</p>
+    <p>Visitors: 6,708,699 | Last updated on: 03/07/2025</p>
+    <p>Helpdesk: 1800-258-1800</p>
+  </footer>
+
+</body>
+</html>

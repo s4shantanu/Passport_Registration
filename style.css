@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #f0f4f7, #cce5ff);
+  padding: 20px;
+}
+
+.form-container {
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: #003366;
+  font-size: 26px;
+}
+
+header p {
+  color: #555;
+  font-size: 14px;
+}
+
+.progress-bar {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 0;
+  counter-reset: step;
+}
+
+.progress-bar li {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  color: #999;
+}
+
+.progress-bar li::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 2px solid #ccc;
+  display: block;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.progress-bar li.active::before {
+  border-color: #0066cc;
+  background-color: #0066cc;
+  color: white;
+}
+
+.progress-bar li::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;
+  z-index: -1;
+}
+
+.progress-bar li:first-child::after {
+  content: none;
+}
+
+.progress-bar li.active {
+  color: #0066cc;
+  font-weight: bold;
+}
+
+.form-page {
+  display: none;
+}
+
+.form-page input,
+.form-page select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.form-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+
+/* Footer */
+footer {
+  background: #00224d;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
